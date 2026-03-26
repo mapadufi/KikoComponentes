@@ -36,6 +36,7 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Sliders**: Controles deslizantes simples e de intervalo (`SliderKiko`, `RangeSliderKiko`).
 *   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
 *   **Switches**: Interruptores personalizados com ícones internos (`SwitchKiko`).
+*   **Tabs**: Abas principais e secundárias com indicadores personalizados (`PrimaryTabsKiko`, `SecondaryTabsKiko`).
 
 ## 🎨 Tema e Customização
 
