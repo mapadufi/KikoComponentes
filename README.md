@@ -33,6 +33,7 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Navigation**: Barra de navegação inferior personalizada (`NavigationBarKiko`).
 *   **Radio Buttons**: Seleção única e grupos de botões de rádio.
 *   **Search**: Barra de pesquisa customizada com suporte a histórico e limpeza.
+*   **Sliders**: Controles deslizantes simples e de intervalo (`SliderKiko`, `RangeSliderKiko`).
 *   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
 
 ## 🎨 Tema e Customização
