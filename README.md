@@ -31,12 +31,14 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Loading & Progress**: Indicadores de progresso circulares, lineares e poligonais expressivos.
 *   **Menus**: Dropdown Menus expressivos e Exposed Dropdown Menus (Select).
 *   **Navigation**: Barra de navegação inferior personalizada (`NavigationBarKiko`).
+*   **Outlined**: Campos de texto personalizados com bordas arredondadas e validação de erro (`KikoOutlinedTextField`).
 *   **Radio Buttons**: Seleção única e grupos de botões de rádio.
 *   **Search**: Barra de pesquisa customizada com suporte a histórico e limpeza.
 *   **Sliders**: Controles deslizantes simples e de intervalo (`SliderKiko`, `RangeSliderKiko`).
 *   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
 *   **Switches**: Interruptores personalizados com ícones internos (`SwitchKiko`).
 *   **Tabs**: Abas principais e secundárias com indicadores personalizados (`PrimaryTabsKiko`, `SecondaryTabsKiko`).
+*   **Tools Bar**: Barra de ferramentas inferior com ações rápidas e FAB (`ToolsBarKiko`).
 
 ## 🎨 Tema e Customização
 
