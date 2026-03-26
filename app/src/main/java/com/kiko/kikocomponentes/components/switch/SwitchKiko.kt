@@ -3,8 +3,7 @@ package com.kiko.kikocomponentes.components.`switch`
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -28,7 +27,7 @@ fun SwitchKiko(
         thumbContent = if (checked) {
             {
                 Icon(
-                    imageVector = Icons.Filled.Check,
+                    imageVector = Icons.Filled.WbSunny,
                     contentDescription = null,
                     modifier = Modifier.size(SwitchDefaults.IconSize),
                 )
@@ -36,7 +35,7 @@ fun SwitchKiko(
         } else {
             {
                 Icon(
-                    imageVector = Icons.Filled.Close,
+                    imageVector = Icons.Filled.Brightness2,
                     contentDescription = null,
                     modifier = Modifier.size(SwitchDefaults.IconSize),
                 )
@@ -47,7 +46,7 @@ fun SwitchKiko(
             checkedTrackColor = MaterialTheme.colorScheme.tertiaryContainer,
             checkedIconColor = MaterialTheme.colorScheme.tertiaryContainer,
             uncheckedThumbColor = MaterialTheme.colorScheme.tertiary,
-            uncheckedTrackColor = MaterialTheme.colorScheme.tertiaryContainer,
+            uncheckedTrackColor = MaterialTheme.colorScheme.surfaceVariant,
             uncheckedIconColor = MaterialTheme.colorScheme.tertiaryContainer
         )
     )
