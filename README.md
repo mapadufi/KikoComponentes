@@ -30,6 +30,10 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Lists**: Itens de lista personalizados com suporte a imagens e ações.
 *   **Loading & Progress**: Indicadores de progresso circulares, lineares e poligonais expressivos.
 *   **Menus**: Dropdown Menus expressivos e Exposed Dropdown Menus (Select).
+*   **Navigation**: Barra de navegação inferior personalizada (`NavigationBarKiko`).
+*   **Radio Buttons**: Seleção única e grupos de botões de rádio.
+*   **Search**: Barra de pesquisa customizada com suporte a histórico e limpeza.
+*   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
 
 ## 🎨 Tema e Customização
 
