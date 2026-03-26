@@ -35,6 +35,7 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Search**: Barra de pesquisa customizada com suporte a histórico e limpeza.
 *   **Sliders**: Controles deslizantes simples e de intervalo (`SliderKiko`, `RangeSliderKiko`).
 *   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
+*   **Switches**: Interruptores personalizados com ícones internos (`SwitchKiko`).
 
 ## 🎨 Tema e Customização
 
