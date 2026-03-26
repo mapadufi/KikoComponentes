@@ -34,11 +34,13 @@ A biblioteca conta com uma vasta gama de componentes organizados por categorias:
 *   **Outlined**: Campos de texto personalizados com bordas arredondadas e validação de erro (`KikoOutlinedTextField`).
 *   **Radio Buttons**: Seleção única e grupos de botões de rádio.
 *   **Search**: Barra de pesquisa customizada com suporte a histórico e limpeza.
+*   **Sheets**: Paineis inferiores e laterais para conteúdos complementares (`BottonSheetsKiko`, `SideSheetKiko`).
 *   **Sliders**: Controles deslizantes simples e de intervalo (`SliderKiko`, `RangeSliderKiko`).
 *   **Snackbars**: Mensagens rápidas de alerta e confirmação com ações (`SnackBarKiko`).
 *   **Switches**: Interruptores personalizados com ícones internos (`SwitchKiko`).
 *   **Tabs**: Abas principais e secundárias com indicadores personalizados (`PrimaryTabsKiko`, `SecondaryTabsKiko`).
 *   **Tools Bar**: Barra de ferramentas inferior com ações rápidas e FAB (`ToolsBarKiko`).
+*   **Tooltips**: Dicas flutuantes simples e informativas (`PlainTooltipKiko`, `RichTooltipKiko`).
 
 ## 🎨 Tema e Customização
 
