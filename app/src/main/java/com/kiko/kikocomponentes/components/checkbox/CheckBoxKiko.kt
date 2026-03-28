@@ -12,7 +12,8 @@ import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kiko.kikocomponentes.components.divider.HorizontalDividerKiko
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 @Composable
 fun SimpleCheckboxKiko(
@@ -176,7 +177,7 @@ fun CheckboxScreenKiko() {
 @Preview(showBackground = true, showSystemUi = true, name = "Checkbox Light")
 @Composable
 fun PreviewCheckboxLight() {
-    KikoComponentesTheme(darkTheme = false) {
+    KikoComponentesTheme (darkTheme = false) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

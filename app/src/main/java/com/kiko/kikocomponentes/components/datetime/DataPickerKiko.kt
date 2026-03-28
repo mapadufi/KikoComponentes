@@ -19,7 +19,8 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 import java.text.SimpleDateFormat
 import java.util.*
 

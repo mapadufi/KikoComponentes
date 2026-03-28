@@ -7,7 +7,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -4,44 +4,34 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import androidx.compose.runtime.*
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kiko.kikocomponentes.ui.screens.main.MainScreen
+import com.kiko.kikocomponentes.ui.screens.splash.SplashScreen
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.viewmodel.ThemeViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            KikoComponentesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            val themeViewModel: ThemeViewModel = viewModel()
+            val themeType by themeViewModel.themeType.collectAsState()
+            val isDarkMode by themeViewModel.isDarkMode.collectAsState()
+
+            KikoComponentesTheme(
+                themeType = themeType,
+                darkTheme = isDarkMode
+            ) {
+                var showSplash by remember { mutableStateOf(true) }
+
+                if (showSplash) {
+                    SplashScreen(onNavigateNext = { showSplash = false })
+                } else {
+                    MainScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KikoComponentesTheme {
-        Greeting("Android")
     }
 }

@@ -15,7 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 // ==============================
 // Icon Button Básico (toggle)
@@ -111,7 +112,7 @@ fun IconButtonPersonKiko(
 @Preview(showBackground = true, showSystemUi = true, name = "Icon Buttons Light Mode")
 @Composable
 fun PreviewIconButtonsLight() {
-    KikoComponentesTheme(darkTheme = false) {
+    KikoComponentesTheme (darkTheme = false) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

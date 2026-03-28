@@ -23,7 +23,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastForEachIndexed
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

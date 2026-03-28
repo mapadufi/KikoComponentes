@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.kiko.kikocomponentes.components.buttons.KikoExtraButton
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
 
 @Composable
 fun KikoAlertDialog(
@@ -103,7 +103,7 @@ fun KikoAlertDialog(
 @Preview(showBackground = true, showSystemUi = true, name = "AlertDialog Light")
 @Composable
 fun KikoAlertDialogPreviewLight() {
-    KikoComponentesTheme(darkTheme = false) {
+    KikoComponentesTheme (darkTheme = false) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

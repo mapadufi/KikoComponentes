@@ -26,7 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 @Composable
 fun CardMinimalKiko() {
@@ -181,7 +182,7 @@ fun CardsColumnKiko() {
 @Preview(showBackground = true, showSystemUi = true, name = "Cards Light")
 @Composable
 fun CardsColumnKikoPreviewLight() {
-    KikoComponentesTheme(darkTheme = false) {
+    KikoComponentesTheme (darkTheme = false) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

@@ -23,7 +23,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kiko.kikocomponentes.R
-import com.kiko.kofre.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -71,7 +72,7 @@ fun CarouselKiko() {
 @Preview(showBackground = true, showSystemUi = true, name = "Carousel Light")
 @Composable
 fun CarouselKikoPreviewLight() {
-    KikoComponentesTheme(darkTheme = false) {
+    KikoComponentesTheme (darkTheme = false) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

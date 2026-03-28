@@ -1,10 +1,10 @@
-package com.kiko.kofre.viewmodel
+package com.kiko.kikocomponentes.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.kiko.kofre.data.datastore.ThemePreferences
-import com.kiko.kofre.ui.theme.AppThemeType
+import com.kiko.kikocomponentes.data.datastore.ThemePreferences
+import com.kiko.kikocomponentes.ui.theme.AppThemeType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest

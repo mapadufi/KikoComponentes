@@ -1,4 +1,4 @@
-package com.kiko.kofre.data.datastore
+package com.kiko.kikocomponentes.data.datastore
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -16,7 +16,7 @@ class ThemePreferences(private val context: Context) {
 
     companion object {
         private val THEME_KEY = stringPreferencesKey("app_theme")
-        private val DARK_MODE_KEY = booleanPreferencesKey("dark_mode") // ✅ usar booleanPreferencesKey
+        private val DARK_MODE_KEY = booleanPreferencesKey("dark_mode")
     }
 
     val themeFlow: Flow<String?> = context.themeDataStore.data.map { it[THEME_KEY] }
