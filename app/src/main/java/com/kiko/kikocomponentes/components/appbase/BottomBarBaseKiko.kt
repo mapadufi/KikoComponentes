@@ -30,7 +30,7 @@ fun BottomBarBaseKiko() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "© 2026 Kiko Componentes",
+                text = "© 2026 Marcos Figueiredo",
                 style = MaterialTheme.typography.labelMedium
             )
         }

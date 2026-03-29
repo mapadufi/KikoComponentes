@@ -1,4 +1,4 @@
-package com.kiko.kofre.ui.theme
+package com.kiko.kikocomponentes.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

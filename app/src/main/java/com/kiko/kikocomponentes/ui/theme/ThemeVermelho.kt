@@ -1,4 +1,4 @@
-package com.kiko.kofre.ui.theme
+package com.kiko.kikocomponentes.ui.theme
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -40,8 +40,7 @@ val DarkVermelhoColorScheme = darkColorScheme(
     outline = Dark950,
     outlineVariant = Dark800,
     scrim = Dark700,
-
-    )
+)
 
 val LightVermelhoColorScheme = lightColorScheme(
     primary = Error900,
@@ -80,5 +79,4 @@ val LightVermelhoColorScheme = lightColorScheme(
     outline = Error900,
     outlineVariant = Error700,
     scrim = Error100,
-
-    )
+)

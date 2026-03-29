@@ -20,11 +20,16 @@ import androidx.compose.ui.unit.dp
 import com.kiko.kikocomponentes.components.alertdialog.KikoAlertDialog
 import com.kiko.kikocomponentes.components.appbase.LayoutBaseKiko
 import com.kiko.kikocomponentes.components.buttons.KikoExtraButton
+import com.kiko.kikocomponentes.ui.theme.AppThemeType
 import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
 
 @Composable
 fun AlertDialogScreen(
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    isDarkTheme: Boolean,
+    onDarkModeChange: (Boolean) -> Unit,
+    selectedTheme: AppThemeType,
+    onThemeTypeChange: (AppThemeType) -> Unit
 ) {
     var showDialog by remember { mutableStateOf(false) }
 
@@ -98,7 +103,11 @@ fun AlertDialogScreen(
     LayoutBaseKiko(
         title = "Alert Dialog",
         onBack = onBack,
-        componentCode = alertCode
+        componentCode = alertCode,
+        isDarkTheme = isDarkTheme,
+        onDarkModeChange = onDarkModeChange,
+        selectedTheme = selectedTheme,
+        onThemeTypeChange = onThemeTypeChange
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -145,7 +154,13 @@ fun AlertDialogScreen(
 @Composable
 fun AlertDialogScreenPreviewLight() {
     KikoComponentesTheme(darkTheme = false) {
-        AlertDialogScreen(onBack = {})
+        AlertDialogScreen(
+            onBack = {},
+            isDarkTheme = false,
+            onDarkModeChange = {},
+            selectedTheme = AppThemeType.PADRAO,
+            onThemeTypeChange = {}
+        )
     }
 }
 
@@ -156,6 +171,12 @@ fun AlertDialogScreenPreviewLight() {
 @Composable
 fun AlertDialogScreenPreviewDark() {
     KikoComponentesTheme(darkTheme = true) {
-        AlertDialogScreen(onBack = {})
+        AlertDialogScreen(
+            onBack = {},
+            isDarkTheme = true,
+            onDarkModeChange = {},
+            selectedTheme = AppThemeType.PADRAO,
+            onThemeTypeChange = {}
+        )
     }
 }
