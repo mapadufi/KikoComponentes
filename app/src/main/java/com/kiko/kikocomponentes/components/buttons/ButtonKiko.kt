@@ -3,17 +3,10 @@ package com.kiko.kikocomponentes.components.buttons
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -28,10 +21,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
 
+// Largura padrão para todos os botões seguindo o KikoExtraButton
+private val DefaultButtonWidth = 280.dp
+
 @Composable
-fun FilledButtonKiko(onClick: () -> Unit = {}) {
+fun FilledButtonKiko(modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     Button(
         onClick = onClick,
+        modifier = modifier.width(DefaultButtonWidth),
+        shape = RoundedCornerShape(15.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.tertiary,
             contentColor = MaterialTheme.colorScheme.tertiaryContainer
@@ -42,9 +40,11 @@ fun FilledButtonKiko(onClick: () -> Unit = {}) {
 }
 
 @Composable
-fun FilledTonalButtonKiko(onClick: () -> Unit = {}) {
+fun FilledTonalButtonKiko(modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     FilledTonalButton(
         onClick = onClick,
+        modifier = modifier.width(DefaultButtonWidth),
+        shape = RoundedCornerShape(15.dp),
         colors = ButtonDefaults.filledTonalButtonColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant,
             contentColor = MaterialTheme.colorScheme.tertiary
@@ -55,9 +55,11 @@ fun FilledTonalButtonKiko(onClick: () -> Unit = {}) {
 }
 
 @Composable
-fun OutlinedButtonKiko(onClick: () -> Unit = {}) {
+fun OutlinedButtonKiko(modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     OutlinedButton(
         onClick = onClick,
+        modifier = modifier.width(DefaultButtonWidth),
+        shape = RoundedCornerShape(15.dp),
         colors = ButtonDefaults.outlinedButtonColors(
             contentColor = MaterialTheme.colorScheme.tertiary
         ),
@@ -68,9 +70,11 @@ fun OutlinedButtonKiko(onClick: () -> Unit = {}) {
 }
 
 @Composable
-fun TextButtonKiko(onClick: () -> Unit = {}) {
+fun TextButtonKiko(modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     TextButton(
         onClick = onClick,
+        modifier = modifier.width(DefaultButtonWidth),
+        shape = RoundedCornerShape(15.dp),
         colors = ButtonDefaults.textButtonColors(
             contentColor = MaterialTheme.colorScheme.tertiary
         )
@@ -87,12 +91,10 @@ fun KikoExtraButton(
 ) {
     Button(
         onClick = onClick,
-        modifier = modifier,
+        modifier = modifier.width(DefaultButtonWidth),
         shape = RoundedCornerShape(15.dp),
         colors = ButtonDefaults.buttonColors(
-            // Fundo semi-transparente
             containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.6f),
-            // Cor do texto e ícones
             contentColor = MaterialTheme.colorScheme.primary
         ),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.tertiary)
@@ -104,32 +106,32 @@ fun KikoExtraButton(
     }
 }
 
-
 @Composable
-fun PersonButtonKiko(onClick: () -> Unit = {}) {
+fun PersonButtonKiko(modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     Box(
-        modifier = Modifier
-            .width(100.dp)
-            .height(40.dp) // Altura específica (ajuste conforme necessário)
+        modifier = modifier
+            .width(DefaultButtonWidth)
+            .height(40.dp)
             .clickable(onClick = onClick)
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        Color(0xFF003399), // 003399
-                        Color(0xFF0787FF)  // 0787FF
+                        Color(0xFF003399),
+                        Color(0xFF0787FF)
                     )
                 ),
                 shape = RoundedCornerShape(25.dp)
             )
-            .padding(8.dp) // Padding reduzido
+            .padding(8.dp),
+        contentAlignment = Alignment.Center
     ) {
         Text(
             "Person",
-            color = Color.White,
-            modifier = Modifier.align(Alignment.Center)
+            color = Color.White
         )
     }
 }
+
 @Composable
 fun ButtonColumnKiko() {
     Box(
@@ -160,7 +162,7 @@ fun ButtonColumnKikoPreviewLight() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.onPrimary) // fundo usando onPrimary
+                .background(MaterialTheme.colorScheme.onPrimary)
         ) {
             ButtonColumnKiko()
         }
@@ -177,7 +179,7 @@ fun ButtonColumnKikoPreviewDark() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.onPrimary) // fundo usando onPrimary
+                .background(MaterialTheme.colorScheme.onPrimary)
         ) {
             ButtonColumnKiko()
         }

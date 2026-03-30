@@ -1,11 +1,7 @@
 package com.kiko.kikocomponentes.components.badges
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Mail
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -16,10 +12,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kiko.kikocomponentes.ui.theme.KikoComponentesTheme
+import com.kiko.kikocomponentes.components.buttons.KikoExtraButton
 
 @Composable
 fun BadgeKiko() {
@@ -32,7 +26,7 @@ fun BadgeKiko() {
         }
     ) {
         Icon(
-            imageVector = Icons.Filled.Mail,
+            imageVector = Icons.Default.Mail,
             contentDescription = "Email",
             tint = MaterialTheme.colorScheme.tertiary
         )
@@ -60,67 +54,14 @@ fun BadgeInteractiveKiko() {
             }
         ) {
             Icon(
-                imageVector = Icons.Filled.ShoppingCart,
+                imageVector = Icons.Default.ShoppingCart,
                 contentDescription = "Shopping cart",
                 tint = MaterialTheme.colorScheme.tertiary
             )
         }
-        Button(
-            onClick = { itemCount++ },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.tertiary,
-                contentColor = MaterialTheme.colorScheme.tertiaryContainer
-            )
-        ) {
-            Text("Add item")
-        }
-    }
-}
-
-@Composable
-fun BadgeScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.CenterVertically)
-    ) {
-        BadgeKiko()
-        BadgeInteractiveKiko()
-    }
-}
-
-// ==============================
-// Previews Light
-// ==============================
-@Preview(showBackground = true, showSystemUi = true, name = "Badge Light")
-@Composable
-fun PreviewBadgeLight() {
-    KikoComponentesTheme (darkTheme = false) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-        ) {
-            BadgeScreen()
-        }
-    }
-}
-
-// ==============================
-// Previews Dark
-// ==============================
-@Preview(showBackground = true, showSystemUi = true, name = "Badge Dark")
-@Composable
-fun PreviewBadgeDark() {
-    KikoComponentesTheme(darkTheme = true) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-        ) {
-            BadgeScreen()
-        }
+        KikoExtraButton(
+            text = "Add item",
+            onClick = { itemCount++ }
+        )
     }
 }

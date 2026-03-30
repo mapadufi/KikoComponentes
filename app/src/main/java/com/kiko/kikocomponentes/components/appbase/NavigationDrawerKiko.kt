@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.filled.MenuOpen
@@ -41,18 +42,19 @@ fun NavigationDrawerKiko(
         KikoDrawerItem("Início", Icons.Default.Home, Screen.Main.route),
         KikoDrawerItem("Alert Dialog", Icons.Default.Warning, Screen.AlertDialog.route),
         KikoDrawerItem("App Bars", Icons.Default.HorizontalSplit, subItems = listOf(
-            KikoDrawerItem("Bottom Bar", Icons.Default.HorizontalSplit, Screen.AppBars.route + "_bottom"),
-            KikoDrawerItem("Small Top Bar", Icons.Default.HorizontalSplit, Screen.AppBars.route + "_small"),
-            KikoDrawerItem("Center Top Bar", Icons.Default.HorizontalSplit, Screen.AppBars.route + "_center"),
-            KikoDrawerItem("Medium Top Bar", Icons.Default.HorizontalSplit, Screen.AppBars.route + "_medium"),
-            KikoDrawerItem("Large Top Bar", Icons.Default.HorizontalSplit, Screen.AppBars.route + "_large")
+            KikoDrawerItem("Bottom Bar", Icons.Default.HorizontalSplit, Screen.AppBarsBottom.route),
+            KikoDrawerItem("Small Top Bar", Icons.Default.HorizontalSplit, Screen.AppBarsSmall.route),
+            KikoDrawerItem("Center Top Bar", Icons.Default.HorizontalSplit, Screen.AppBarsCenter.route),
+            KikoDrawerItem("Medium Top Bar", Icons.Default.HorizontalSplit, Screen.AppBarsMedium.route),
+            KikoDrawerItem("Large Top Bar", Icons.Default.HorizontalSplit, Screen.AppBarsLarge.route)
         )),
         KikoDrawerItem("Badges", Icons.Default.Notifications, Screen.Badges.route),
         KikoDrawerItem("Buttons", Icons.Default.SmartButton, subItems = listOf(
-            KikoDrawerItem("Standard Buttons", Icons.Default.SmartButton, Screen.Buttons.route),
-            KikoDrawerItem("Groups", Icons.Default.GroupWork, Screen.Buttons.route + "_groups"),
-            KikoDrawerItem("Segmented", Icons.Default.ViewArray, Screen.Buttons.route + "_segmented"),
-            KikoDrawerItem("Fab", Icons.Default.Add, Screen.Buttons.route + "_fab")
+            KikoDrawerItem("Standard Buttons", Icons.Default.SmartButton, Screen.ButtonsStandard.route),
+            KikoDrawerItem("Fab Buttons", Icons.Default.Add, Screen.ButtonsFab.route),
+            KikoDrawerItem("Icon Buttons", Icons.Default.TouchApp, Screen.ButtonsIcon.route),
+            KikoDrawerItem("Split Buttons", Icons.Default.VerticalSplit, Screen.ButtonsSplit.route),
+            KikoDrawerItem("Button Groups", Icons.Default.GroupWork, Screen.ButtonsGroups.route)
         )),
         KikoDrawerItem("Cards", Icons.Default.CreditCard, Screen.Cards.route),
         KikoDrawerItem("Carousel", Icons.Default.ViewCarousel, Screen.Carousel.route),
@@ -64,31 +66,23 @@ fun NavigationDrawerKiko(
         )),
         KikoDrawerItem("Dividers", Icons.Default.HorizontalRule, Screen.Dividers.route),
         KikoDrawerItem("Lists", Icons.AutoMirrored.Filled.List, Screen.Lists.route),
-        KikoDrawerItem("Loading", Icons.Default.Refresh, subItems = listOf(
-            KikoDrawerItem("Circular/Linear", Icons.Default.Refresh, Screen.Loading.route),
-            KikoDrawerItem("Expressive", Icons.Default.Star, Screen.Loading.route + "_expressive")
-        )),
+        KikoDrawerItem("Loading", Icons.Default.Refresh, Screen.Loading.route),
         KikoDrawerItem("Menus", Icons.AutoMirrored.Filled.MenuOpen, Screen.Menus.route),
         KikoDrawerItem("Navigation Bar", Icons.Default.Menu, Screen.NavigationBar.route),
         KikoDrawerItem("Outlined Fields", Icons.Default.TextFields, Screen.Outlined.route),
         KikoDrawerItem("Radio Button", Icons.Default.RadioButtonChecked, Screen.RadioButton.route),
         KikoDrawerItem("Search", Icons.Default.Search, Screen.Search.route),
         KikoDrawerItem("Sheets", Icons.Default.Layers, subItems = listOf(
-            KikoDrawerItem("Bottom Sheet", Icons.Default.ExpandMore, Screen.Sheets.route + "_bottom"),
-            KikoDrawerItem("Side Sheet", Icons.Default.SubdirectoryArrowRight, Screen.Sheets.route + "_side")
+            KikoDrawerItem("Bottom Sheet", Icons.Default.ExpandMore, Screen.SheetsBottom.route),
+            KikoDrawerItem("Side Sheet", Icons.Default.SubdirectoryArrowRight, Screen.SheetsSide.route)
         )),
         KikoDrawerItem("Slider", Icons.Default.LinearScale, Screen.Slider.route),
         KikoDrawerItem("Snackbar", Icons.Default.Info, Screen.Snackbar.route),
         KikoDrawerItem("Switch", Icons.Default.ToggleOn, Screen.Switch.route),
-        KikoDrawerItem("Tabs", Icons.Default.Tab, subItems = listOf(
-            KikoDrawerItem("Primary Tabs", Icons.Default.Tab, Screen.Tabs.route + "_primary"),
-            KikoDrawerItem("Secondary Tabs", Icons.Default.TabUnselected, Screen.Tabs.route + "_secondary")
-        )),
+        KikoDrawerItem("Tabs", Icons.Default.Tab, Screen.Tabs.route),
+        KikoDrawerItem("Toast", Icons.Default.Announcement, Screen.Toast.route),
         KikoDrawerItem("Tools Bar", Icons.Default.Build, Screen.ToolsBar.route),
-        KikoDrawerItem("Tooltips", Icons.Default.QuestionMark, subItems = listOf(
-            KikoDrawerItem("Plain Tooltip", Icons.Default.QuestionMark, Screen.Tooltips.route + "_plain"),
-            KikoDrawerItem("Rich Tooltip", Icons.Default.Lightbulb, Screen.Tooltips.route + "_rich")
-        ))
+        KikoDrawerItem("Tooltips", Icons.Default.QuestionMark, Screen.Tooltips.route)
     )
 
     ModalNavigationDrawer(
@@ -99,10 +93,8 @@ fun NavigationDrawerKiko(
                 drawerContentColor = MaterialTheme.colorScheme.onSurface
             ) {
                 Column(
-                    modifier = Modifier
-                        .verticalScroll(rememberScrollState())
+                    modifier = Modifier.verticalScroll(rememberScrollState())
                 ) {
-                    // Header com fundo Tertiary e Texto em TertiaryContainer
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -178,7 +170,6 @@ fun NavigationDrawerKiko(
                             }
                         }
 
-                        // Divider e Item Sair
                         Spacer(Modifier.height(8.dp))
                         HorizontalDividerKiko(modifier = Modifier.padding(horizontal = 12.dp))
                         Spacer(Modifier.height(8.dp))
@@ -187,7 +178,7 @@ fun NavigationDrawerKiko(
                             label = { Text("Sair") },
                             selected = false,
                             onClick = onLogoutClick,
-                            icon = { Icon(Icons.Default.ExitToApp, contentDescription = null) },
+                            icon = { Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = null) },
                             shape = MaterialTheme.shapes.medium,
                             colors = NavigationDrawerItemDefaults.colors(
                                 unselectedIconColor = MaterialTheme.colorScheme.error,
@@ -204,9 +195,6 @@ fun NavigationDrawerKiko(
     )
 }
 
-// ==============================
-// Previews Light
-// ==============================
 @Preview(showBackground = true, name = "Drawer Light")
 @Composable
 fun NavigationDrawerKikoPreviewLight() {
@@ -220,9 +208,6 @@ fun NavigationDrawerKikoPreviewLight() {
     }
 }
 
-// ==============================
-// Previews Dark
-// ==============================
 @Preview(showBackground = true, name = "Drawer Dark")
 @Composable
 fun NavigationDrawerKikoPreviewDark() {

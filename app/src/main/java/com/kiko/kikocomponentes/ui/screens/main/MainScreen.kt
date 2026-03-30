@@ -63,7 +63,7 @@ fun MainScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Explore minha biblioteca de componentes modernos e expressivos utilizando o menu lateral.",
+                    text = "Explore minha biblioteca de componentes modernos e expressivos feitos com Jetpack Compose. Navegue utilizando o menu lateral.",
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.tertiary,
                     textAlign = TextAlign.Center
